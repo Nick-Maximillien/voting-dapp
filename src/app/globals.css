@@ -1,26 +1,221 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@media screen and (orientation:portrait) {
+  .body {
+    background-color: springgreen;
+    width: 100%;
+    margin: 2%;
+    padding: 5%;
+    height: 100%;
+  }
+  .container-fluid {
+    width: 100%;
+  }
+  .container {
+    width: 100%;
+  }
+  a {
+    text-decoration: none;
+  }
+  .header {
+    width: 100%;
+    border-radius: 10px;
+    margin: 0% 0% 2% 0%;
+    padding-right: 10%;
+  }
+  .nav {
+    padding: 2% 4% 2% 6%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 90%;
+  }
+  .nav-item {
+    margin: 1% 3% 0% 15%;
+    list-style: none;
+    display: inline;
+  }
+  .nav-link {
+    text-decoration: none;
+  }
+  .logoImg {
+    width: 100%;
+  }
+  .proposal-table {
+  width: 100%;
+  border-collapse: collapse; /* merge borders */
+  margin-top: 1rem;
+  font-family: Arial, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.proposal-table th,
+.proposal-table td {
+  border: 1px solid #666; /* cell borders */
+  padding: 8px 12px;
+  text-align: left;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.proposal-table thead {
+  background-color: #4f46e5; /* purple header background */
+  color: white;
+}
+
+.proposal-table tbody tr.even {
+  background-color: #f9f9f9; /* light gray for even rows */
+}
+
+.proposal-table tbody tr.odd {
+  background-color: #ffffff; /* white for odd rows */
+}
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero button {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.about {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 1rem;
+  line-height: 1.8;
+}
+
+.about h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+  .footer {
+    background-color: bisque;
+  }
+}
+@media screen and (orientation:landscape) {
+  .body {
+    background-color: cyan;
+    width: 100%;
+    margin: 2%;
+    padding: 5%;
+    height: 100%;
+  }
+  .container-fluid {
+    width: 100%;
+  }
+  .container {
+    width: 100%;
+  }
+  a {
+    text-decoration: none;
+  }
+  .header {
+    width: 100%;
+    border-radius: 10px;
+    margin: 0% 0% 2% 0%;
+    padding-right: 10%;
+  }
+  .nav {
+    padding: 2% 4% 2% 6%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 90%;
+  }
+  .nav-item {
+    margin: 1% 3% 0% 15%;
+    list-style: none;
+    display: inline;
+  }
+  .nav-link {
+    text-decoration: none;
+  }
+  .logoImg {
+    width: 100%;
+  }
+  .proposal-table {
+  width: 100%;
+  border-collapse: collapse; /* merge borders */
+  margin-top: 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.proposal-table th,
+.proposal-table td {
+  border: 1px solid #666; /* cell borders */
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.proposal-table thead {
+  background-color: #4f46e5; /* purple header background */
+  color: white;
+}
+
+.proposal-table tbody tr.even {
+  background-color: #f9f9f9; /* light gray for even rows */
+}
+
+.proposal-table tbody tr.odd {
+  background-color: #ffffff; /* white for odd rows */
+}
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero button {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.about {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 1rem;
+  line-height: 1.8;
+}
+
+.about h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+  .footer {
+    background-color: bisque;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
