@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ethers } from "ethers";
 import getBallotContract from "@utils/getContract";
 import toast, { Toaster } from "react-hot-toast";
 import {
@@ -14,16 +13,16 @@ import {
   CartesianGrid,
 } from "recharts";
 
-const shortenAddress = (addr: string) =>
+const shortenAddress = (addr) =>
   addr ? `${addr.slice(0, 6)}...${addr.slice(-4)}` : "";
 
 export default function Home() {
   const [delegateAddress, setDelegateAddress] = useState("");
   const [voteId, setVoteId] = useState(0);
   const [giveVoteAddress, setGiveVoteAddress] = useState("");
-  const [proposals, setProposals] = useState<{ name: string; voteCount: string }[]>([]);
+  const [proposals, setProposals] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [walletAddress, setWalletAddress] = useState<string | null>(null);
+  const [walletAddress, setWalletAddress] = useState(null);
 
   const connectWallet = async () => {
     try {
@@ -31,7 +30,7 @@ export default function Home() {
       const address = await signer.getAddress();
       setWalletAddress(address);
       toast.success("Wallet connected");
-    } catch (e: any) {
+    } catch (e) {
       console.error(e);
       toast.error(e?.message || "Connection failed");
     }
@@ -50,7 +49,7 @@ export default function Home() {
       await tx.wait();
       toast.success("Delegation successful!");
       setDelegateAddress("");
-    } catch (e: any) {
+    } catch (e) {
       console.error(e);
       toast.error(e?.message || "Delegation failed.");
     } finally {
@@ -74,7 +73,7 @@ export default function Home() {
       toast.success("Voted successfully!");
       setVoteId(0);
       await loadProposals();
-    } catch (e: any) {
+    } catch (e) {
       console.error(e);
       toast.error(e?.message || "Vote failed.");
     } finally {
@@ -90,7 +89,7 @@ export default function Home() {
       await tx.wait();
       toast.success("Right to vote granted!");
       setGiveVoteAddress("");
-    } catch (e: any) {
+    } catch (e) {
       console.error(e);
       toast.error(e?.message || "Granting vote rights failed.");
     } finally {
@@ -111,7 +110,7 @@ export default function Home() {
         });
       }
       setProposals(loaded);
-    } catch (err: any) {
+    } catch (err) {
       toast.error(err?.message || "Failed to load proposals");
       console.error(err);
     }
@@ -160,23 +159,23 @@ export default function Home() {
 
               <div className="mt-6">
                 <table className="proposal-table">
-                <thead>
-                  <tr>
-                    <th>Vote Choice</th>
-                    <th>Proposal</th>
-                    <th>Vote Count</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {proposals.map((proposal, index) => (
-                    <tr key={index} className={index % 2 === 0 ? "even" : "odd"}>
-                      <td>{index}</td>
-                      <td><strong>{proposal.name}</strong></td>
-                      <td>{proposal.voteCount}</td>
+                  <thead>
+                    <tr>
+                      <th>Vote Choice</th>
+                      <th>Proposal</th>
+                      <th>Vote Count</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>              
+                  </thead>
+                  <tbody>
+                    {proposals.map((proposal, index) => (
+                      <tr key={index} className={index % 2 === 0 ? "even" : "odd"}>
+                        <td>{index}</td>
+                        <td><strong>{proposal.name}</strong></td>
+                        <td>{proposal.voteCount}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </>
           ) : (
