@@ -1,19 +1,9 @@
 import { ethers } from "ethers";
 import abi from "./abi.json";
 
-const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!;
+const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS;
 
-declare global {
-  interface Window {
-    ethereum?: any;
-  }
-}
-
-let cached: {
-  provider: ethers.BrowserProvider;
-  signer: ethers.JsonRpcSigner;
-  contract: ethers.Contract;
-} | null = null;
+let cached = null;
 
 const getBallotContract = async () => {
   if (typeof window === "undefined" || !window.ethereum) {
