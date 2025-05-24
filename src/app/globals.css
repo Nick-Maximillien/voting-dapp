@@ -35,8 +35,11 @@
   .nav-link {
     text-decoration: none;
   }
+  .logo {
+    width: 10%
+  }
   .logoImg {
-    width: 20%;
+    width: 80%;
   }
   .proposal-table {
   width: 100%;
