@@ -1,7 +1,7 @@
 import { ethers } from "ethers";
 import abi from "./abi.json";
 
-const CONTRACT_ADDRESS = "0x351d37Cd035326C640C3490496F884F40ae0F11b";
+const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!;
 
 declare global {
   interface Window {
