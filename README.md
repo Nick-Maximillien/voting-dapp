@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🗳️ Voting DApp
 
-## Getting Started
+A decentralized, transparent, and secure voting application built with **Next.js**, **Hardhat**, and **Ethers.js**. It allows users to participate in a blockchain-governed ballot: casting votes, delegating, and managing voter rights directly from their wallet.
 
-First, run the development server:
+---
+
+## ✨ Features
+
+- 🔐 Wallet connection via MetaMask
+- 📊 Real-time vote visualization with interactive bar charts
+- 🗳️ Vote by selecting a proposal ID
+- 👥 Delegate votes to another address
+- 🎟️ Grant voting rights to specific addresses
+- 🔗 Fully powered by smart contracts on Ethereum-compatible networks
+
+---
+
+## 🧱 Tech Stack
+
+| Layer      | Tools / Frameworks |
+|------------|--------------------|
+| Frontend   | Next.js (App Router), React, Tailwind CSS |
+| Blockchain | Solidity, Hardhat, Ethers.js |
+| UI Helpers | Recharts (bar chart), `react-hot-toast` for alerts |
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
 
 ```bash
+git clone https://github.com/Nick-Maximillien/votingDapp.git
+cd votingDapp
+cd frontend
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
