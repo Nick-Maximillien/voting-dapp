@@ -38,5 +38,5 @@ npm run dev
 
 
 ---
-
+MIT © 2025 Nick Maximillien
 
