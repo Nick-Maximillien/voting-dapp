@@ -36,7 +36,15 @@ cd frontend
 npm install
 npm run dev
 
-
+├── public/                # Static assets
+├── src/
+│   ├── app/               # App Router pages (e.g., /ballot, /about)
+│   ├── components/        # Reusable UI components
+│   ├── lib/               # ABI, contract functions, wallet config
+│   └── styles/            # Tailwind + global styles
+├── README.md
+├── package.json
+└── next.config.js
 ---
 MIT © 2025 Nick Maximillien
 
